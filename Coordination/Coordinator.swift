@@ -15,21 +15,21 @@ public protocol Coordinator: class, Presentable {
 }
 
 extension Coordinator {
-  func addChild(_ coordinator: Coordinator) {
+  public func addChild(_ coordinator: Coordinator) {
     // add only unique object
     guard !childCoordinators.contains(where: { $0 === coordinator }) else { return }
     childCoordinators.append(coordinator)
   }
   
-  func removeChild(_ coordinator: Coordinator?) {
+  public func removeChild(_ coordinator: Coordinator?) {
     for (index, element) in childCoordinators.enumerated() where element === coordinator {
       childCoordinators.remove(at: index)
       break
     }
   }
-  func toPresentable() -> UIViewController {
+  public func toPresentable() -> UIViewController {
     return router.toPresentable()
   }
   
-  func start() {}
+  public func start() {}
 }

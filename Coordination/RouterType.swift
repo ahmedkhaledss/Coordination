@@ -18,22 +18,22 @@ public protocol RouterType: Presentable {
 }
 
 extension RouterType {
-  func present(_ module: Presentable, animated: Bool = true, completion: (() -> Void)? = nil) {
+  public func present(_ module: Presentable, animated: Bool = true, completion: (() -> Void)? = nil) {
     present(module, animated: animated, completion: completion)
   }
-  func push(_ module: Presentable, animated: Bool = true, hideBottomBar: Bool = false, onPop: (() -> Void)?) {
+  public func push(_ module: Presentable, animated: Bool = true, hideBottomBar: Bool = false, onPop: (() -> Void)?) {
     push(module, animated: animated, hideBottomBar: hideBottomBar, onPop: onPop)
   }
-  func popModule(animated: Bool = true) {
+  public func popModule(animated: Bool = true) {
     popModule(animated: animated)
   }
-  func dismissModule(animated: Bool = true, completion: (() -> Void)? = nil) {
+  public func dismissModule(animated: Bool = true, completion: (() -> Void)? = nil) {
     dismissModule(animated: animated, completion: completion)
   }
-  func setRootModule(_ module: Presentable, hideBar: Bool = false, onPop: (() -> Void)? = nil) {
+  public func setRootModule(_ module: Presentable, hideBar: Bool = false, onPop: (() -> Void)? = nil) {
     setRootModule(module, hideBar: hideBar, onPop: onPop)
   }
-  func popToRootModule(animated: Bool = false) {
+  public func popToRootModule(animated: Bool = false) {
     popToRootModule(animated: animated)
   }
 }
